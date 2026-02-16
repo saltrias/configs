@@ -3,11 +3,13 @@
   "modules": [
     {
         "type": "title",
-        "format": "  {user-name-colored}{at-symbol-colored}{host-name-colored}",
+        "format": "        {user-name-colored}{at-symbol-colored}{host-name-colored}",
     }, 
     {
         "type": "custom",
-        "format": "  --------",
+        // "format": "=-=-=-=-=-=-=-=-=-=-=-=-=-=",
+        // "format": "<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+        "format": "<->-<->-<->-<->-<->-<->-<->"
     },
     {
       "type": "os",
@@ -59,9 +61,18 @@
         "keyColor": "38;2;245;194;231",
         "outputColor": "bright_white"
     },
+    {
+        "type": "custom",
+        // "format": "=-=-=-=-=-=-=-=-=-=-=-=-=-=",
+        // "format": ">=-=<>=-=<>=-=<>=-=<>=-=<>=",
+        // "format": ">>>>>>>>>>>>>>>>>>>>>>>>>>>"
+        "format": "<->-<->-<->-<->-<->-<->-<->"
+    },
   ],
   "logo": {
     "source": "fedora_small",
+    // "color": { "1": "38;2;137;220;235" },
+    // "color": { "1": "38;2;60;110;180" },
     "color": { "1": "38;2;255;255;255" },
     "padding": {
       "left": 1,

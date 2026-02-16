@@ -9,6 +9,7 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 set $alt Mod1
+bindsym Print Mod4
 
 # Home row direction keys, like vim
 set $left h
@@ -61,9 +62,9 @@ output * bg /home/al/Pictures/background.jpg fill
        middle_emulation enabled
    }
 #
-#   input type:keyboard {
-#       xkb_layout "eu"
-#   }
+   input "type:keyboard" {
+        xkb_options caps:escape,altwin:prtsc_rwin
+   }
 #
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
@@ -218,7 +219,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # bindsym Print exec grim
 
 #
 # Status Bar:
@@ -244,10 +245,6 @@ gaps outer 5
 set $clear #ffffff00
 
 default_border none
-
-client.focused $clear #CBA6F7 #000000 #123456
-client.focused_inactive $clear #181825 #FFFFFF #123456
-client.unfocused $clear #181825 #FFFFFF #123456
 
 font pango:JetBrainsMono NF 10
 

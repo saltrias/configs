@@ -11,8 +11,7 @@ dynamic_title = false
 dynamic_padding = true
 
 [font]
-
-normal = { family = "JetBrainsMono NF" }
+normal = { family = "JetBrainsMono NFM" }
 size = 14
 
 [colors.primary]

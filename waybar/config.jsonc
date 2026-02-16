@@ -1,10 +1,11 @@
 // -*- mode: jsonc -*-
 {
     // "layer": "top", // waybar at top layer
-    // "position": "bottom", // waybar position (top|bottom|left|right)
-    "height": 30, // waybar height (to be removed for auto height)
-    // "width": 1280, // waybar width
-    "spacing": 4, // gaps between modules (4px)
+    "position": "top", // waybar position (top|bottom|left|right)
+    "height": 35, // waybar height (to be removed for auto height)
+    "width": 1366, // waybar width
+    "spacing": 5, // gaps between modules (4px)
+    "reload_style_on_change": true,
     // choose the order of the modules
     "modules-left": [
         "sway/workspaces",
@@ -15,7 +16,8 @@
     ],
     "modules-right": [
         // "idle_inhibitor"
-        // "pulseaudio",
+        "pulseaudio",
+        "custom/seperator",
         // "network",
         // "power-profiles-daemon",
         // "cpu",
@@ -24,25 +26,27 @@
         // "backlight",
         // "sway/language",
         "battery",
-        "clock",
-        "tray"
+        "custom/seperator",
+        "clock#date",
+        "custom/seperator",
+        "clock#time",
     ],
     // modules configuration
     "sway/workspaces": {
-    //     "disable-scroll": true,
+         "disable-scroll": true,
          "all-outputs": true,
-         "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
+         "warp-on-scroll": true,
+         "format": "{name}",
+         // "format-icons": {
+             // "1": "",
+             // "2": "",
+             // "3": "",
+             // "4": "",
+             // "5": "",
+             // "urgent": "",
+             // "focused": "",
+             // "default": ""
+         // },
         "persistent-workspaces": {
             "1": [],
             "2": [],
@@ -60,7 +64,8 @@
         }
     },
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "<span style=\"italic\">{}</span>",
+        "format": "<i>{}</i>"
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
@@ -110,9 +115,15 @@
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         // }
     },
-    "clock": {
+    "clock#date": {
         "interval": 10,
-        "format": "{:%I:%M%p}",
+        "format": "<i>{:%Y-%m-%d}</i>",
+        "tooltip": false
+    },
+    "clock#time": {
+        "interval": 10,
+        "format": "<i>{:%I:%M%p}</i>",
+        "tooltip": false
     },
     "cpu": {
         "format": "{usage}% ",
@@ -140,14 +151,13 @@
             // "warning": 30,
             // "critical": 15
         // },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}%",
-        "format-plugged": "{capacity}%",
-        "format-alt": "{time} {icon}",
+        "format": "<i>{icon} {capacity}%</i>",
+        "format-full": "<i>{icon} {capacity}%</i>",
+        "format-charging": "<i>{icon} {capacity}%</i>",
+        "format-plugged": "<i>{icon} {capacity}%</i>",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂂", "󰁹"]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -174,10 +184,10 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format": "<i>󰕾 {volume}%</i>",
+        // "format-bluetooth": "{volume}% {icon} {format_source}",
+        // "format-bluetooth-muted": " {icon} {format_source}",
+        // "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -214,5 +224,9 @@
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
+    },
+    "custom/seperator": {
+        // "format": "│"
+        "format": "╱"
     }
 }
