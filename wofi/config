@@ -1,0 +1,5 @@
+show=drun
+term=alacritty
+lines=8
+allow_images=true
+width=40%

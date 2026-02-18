@@ -29,7 +29,7 @@
 
 * {
     /* font-family: 'noto sans mono', 'font awesome 6 free', 'font awesome 6 brands', monospace; */
-    font-family: "JetBrainsMono NFM";
+    font-family: "JetBrainsMono NF";
     font-size: 15px;
 }
 
@@ -173,13 +173,13 @@ label:focus {
     background-color: #000000;
 }
 
-#network {
-    background-color: #2980b9;
+/* #network {
+    background-color: transparent;
 }
 
 #network.disconnected {
     background-color: #f53c3c;
-}
+} */
 
 #pulseaudio {
     color: #ffffff;

@@ -19,10 +19,9 @@
       "outputColor": "bright_white"
     },
     {
-      "type": "de",
-      "key": "  de",
+      "type": "wm",
+      "key": "  wm",
       "format": "{process-name}",
-      "format": "sway",
       "keyColor": "38;2;250;179;135",
       "outputColor": "bright_white"
     },
@@ -54,13 +53,13 @@
         "keyColor": "38;2;203;166;247",
         "outputColor": "bright_white"
     },
-    {
-        "type": "disk",
-        "key": "disk",
-        "format": "{size-used} / {size-total}",
-        "keyColor": "38;2;245;194;231",
-        "outputColor": "bright_white"
-    },
+    // {
+        // "type": "disk",
+        // "key": "disk",
+        // "format": "{size-used} / {size-total}",
+        // // "keyColor": "38;2;245;194;231",
+        // "outputColor": "bright_white"
+    // },
     {
         "type": "custom",
         // "format": "=-=-=-=-=-=-=-=-=-=-=-=-=-=",

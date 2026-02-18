@@ -13,23 +13,26 @@
         // "sway/scratchpad"
     ],
     "modules-center": [
+        // "clock#date",
+        // "clock#time",
+        "clock",
     ],
     "modules-right": [
         // "idle_inhibitor"
+        "network",
+        "custom/seperator",
         "pulseaudio",
         "custom/seperator",
-        // "network",
         // "power-profiles-daemon",
         // "cpu",
         // "memory",
         // "temperature",
         // "backlight",
         // "sway/language",
-        "battery",
-        "custom/seperator",
-        "clock#date",
-        "custom/seperator",
-        "clock#time",
+        "battery"
+        // "clock#date",
+        // "custom/seperator",
+        // "clock#time",
     ],
     // modules configuration
     "sway/workspaces": {
@@ -117,13 +120,17 @@
     },
     "clock#date": {
         "interval": 10,
-        "format": "<i>{:%Y-%m-%d}</i>",
+        "format": "{:%Y-%m-%d}",
         "tooltip": false
     },
     "clock#time": {
         "interval": 10,
-        "format": "<i>{:%I:%M%p}</i>",
+        "format": "{:%I:%M%p}",
         "tooltip": false
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%Y-%m-%d %I:%M %p}",
     },
     "cpu": {
         "format": "{usage}% ",
@@ -151,10 +158,10 @@
             // "warning": 30,
             // "critical": 15
         // },
-        "format": "<i>{icon} {capacity}%</i>",
-        "format-full": "<i>{icon} {capacity}%</i>",
-        "format-charging": "<i>{icon} {capacity}%</i>",
-        "format-plugged": "<i>{icon} {capacity}%</i>",
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "{icon} {capacity}%",
+        "format-plugged": "{icon} {capacity}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂂", "󰁹"]
@@ -175,16 +182,16 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "  {essid}",
+        // "format-ethernet": "{ipaddr}/{cidr} ",
+        // "tooltip-format": "{ifname} via {gwaddr} ",
+        // "format-linked": "{ifname} (No IP) ",
+        // "format-disconnected": "Disconnected ⚠",
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "<i>󰕾 {volume}%</i>",
+        "format": "󰕾 {volume}%",
         // "format-bluetooth": "{volume}% {icon} {format_source}",
         // "format-bluetooth-muted": " {icon} {format_source}",
         // "format-muted": " {format_source}",
