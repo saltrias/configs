@@ -15,10 +15,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local map = vim.keymap.set
-local setColor = vim.api.nvim_set_hl
-local alias = vim.api.nvim_create_user_command
-
 -- colorPaletteList = {
     -- C.red,
     -- C.maroon,
@@ -57,12 +53,14 @@ require("lazy").setup("plugins")
 
 -- make sure neovim is using the system clipboard
 
--- disable arrow keys
--- trust me, i will become good i think
-map({"n", "v", "i", "c"}, "<Up>", "<NOP>")
-map({"n", "v", "i", "c"}, "<Down>", "<NOP>")
-map({"n", "v", "i", "c"}, "<Left>", "<NOP>")
-map({"n", "v", "i", "c"}, "<Right>", "<NOP>")
+-- soft tab setup
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+
+vim.opt.scrolloff = 7
+
 
 -- neovide config
 if vim.g.neovide then

@@ -3,3 +3,4 @@ term=alacritty
 lines=8
 allow_images=true
 width=40%
+sort_order=alphabetical
